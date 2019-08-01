@@ -1,7 +1,7 @@
 '''
 Catherine Turner
 7/31/19
-https://projecteuler.net// Problem 1
+https://projecteuler.net/ Problem 1
 '''
 
 def multipleSum(a, b, max):
