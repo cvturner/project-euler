@@ -18,7 +18,7 @@ def primeSum(max):
     primes = []
     current = 1
 
-    while current < max:
+    while current < (max-1):
         current += 1
         if checkPrime(current):
             primes.append(current)
