@@ -10,7 +10,7 @@ def properDivisors(target):
     for num in range(1, int(target**0.5 + 1)):
         if target % num == 0:
             divisorList.append(num)
-            if (int(target/num) != target):
+            if (divisorList.count(target/num) == 0) and (int(target/num) != target):
                 divisorList.append(int(target/num))
     divisorList.sort()
     return divisorList
