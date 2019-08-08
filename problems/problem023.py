@@ -25,25 +25,26 @@ def abundantNums(max):
 
     return abundants
 
+# Generate a list of positive integers up to provided max that can't be calculated by adding two abundant numbers
 def notAbundantSums(max):
 
-    # Create list to hold values for all positive integers
-    results = ['1'] * max
+    # Create a list holding all positive integers from 1 to the max
+    results = list(range(1, max))
 
     # Create list of abundant numbers up to / including max
     abundants = abundantNums(max)
 
-    # Find all potential abundant+abundant sums, and mark them in results list
+    # Remove abundant + abundant sums from positive integers list
     for a in abundants:
         for b in abundants:
             if (a+b) < max:
-                results[a+b] = '0'
+                results[a+b-1] = 0
             else:
                 break
+    while results.count(0) != 0:
+        results.remove(0)
 
-    # Find the total of the remaining positive integers in the results list
-    total = sum(a for (a, b) in enumerate(results) if b == '1')
+    return results
 
-    return total
-
-print(notAbundantSums(28123))
+# Find the sum of all positive integers up to 28123 that can't be calculated by adding two abundant numbers
+print(sum(notAbundantSums(28123)))
