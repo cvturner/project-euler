@@ -4,12 +4,10 @@ Catherine Turner
 https://projecteuler.net/ Problem 3
 '''
 
-import math
-
 def smallestFactor(target):
     current = 2
     result = target
-    while ((current < (math.sqrt(target) + 1))):
+    while ((current < (target**(1/2) + 1))):
         if (target % current == 0):
             return current
         else:
